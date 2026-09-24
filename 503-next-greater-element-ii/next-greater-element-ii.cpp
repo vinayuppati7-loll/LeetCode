@@ -4,8 +4,10 @@ public:
         int n = nums.size();
         vector<int> answer(n,-1);
         stack<int> st;
-        
-        for(int i = 2*n-1;i>=0;i--){
+        // (i%n) is playing with imaginary indices 
+        //we imagine the array to be written to written 2 times continuosly and 
+        //giving the index value contuinosly!
+        for(int i = 2*n-1;i>=0;i--){//back traversing
             while(!st.empty() && st.top() <= nums[i%n]){
                 st.pop();
             }
